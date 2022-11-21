@@ -1,9 +1,9 @@
 <div>
   <app-add-user (addUSer)="addUser($event)"></app-add-user>
 </div>
-<ng-container *ngFor="let user of users">
-  <div>User Name:{{user.fullName}}</div>
-  <div>User Role: {{user.role}}</div>
-  <div>User Status: {{user.status}}</div>
-</ng-container>
-<hr>
+
+<div class="user-items">
+  <ng-container *ngFor="let user of users; let i = index">
+    <app-user-item (statusChanged)="changeStatus($event, i)" [user]="user"></app-user-item>
+  </ng-container>
+</div>

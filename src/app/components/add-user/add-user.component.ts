@@ -7,22 +7,18 @@ import { IUser,UserRole,UserStatus } from 'src/app/interfaces';
   styleUrls: ['./add-user.component.scss']
 })
 export class AddUserComponent{
-  // users:IUser[] = []
   @Output() addUSer: EventEmitter<IUser>= new EventEmitter()
   constructor() { }
 
   ngOnInit(): void {
   }
- addUserHandler(fullName:string, role: string, status: string){
-
+ addUserHandler(fullName:string, role: string){
+if(!fullName || !role)return;
    this.addUSer.emit({
      fullName: fullName,
      role: role as UserRole,
-     status: status as UserStatus
+     status: 'active'
    })
-
  }
-
-  
-   }
+}
 

@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { IUser } from './interfaces';
+import { IUser, UserStatus } from './interfaces';
 
 @Component({
   selector: 'app-root',
@@ -9,8 +9,12 @@ import { IUser } from './interfaces';
 export class AppComponent {
   title = 'user-managment';
   users:IUser[] = []
+  
 
-  addUser(event: IUser){
-    this.users.push(event)
+  addUser(user: IUser){
+    this.users.push(user)
+  }
+  changeStatus(status: UserStatus, index: number){
+    this.users[index].status = status
   }
 }

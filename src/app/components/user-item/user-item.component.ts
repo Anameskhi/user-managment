@@ -1,4 +1,4 @@
-import { Component, Input, OnInit } from '@angular/core';
+import { Component, EventEmitter, Input, OnInit, Output } from '@angular/core';
 import { IUser, UserStatus } from 'src/app/interfaces';
 
 @Component({
@@ -8,10 +8,11 @@ import { IUser, UserStatus } from 'src/app/interfaces';
 })
 export class UserItemComponent{
   @Input() user?: IUser
+  @Output() statusChanged:EventEmitter<UserStatus> = new EventEmitter()
   constructor() { }
   
   changeStatus(status: UserStatus){
-
+    this.statusChanged.emit(status)
   }
  
 }

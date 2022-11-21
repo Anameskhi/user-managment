@@ -1,12 +1,17 @@
 
 <div class="container">
-  <div>{{user?.fullName}}</div>
-<div>
-  <button (click)="changeStatus('active')">Activate</button>
-  <button (click)="changeStatus('inactive')">Deactivate</button>
-  <button (click)="changeStatus('banned')">Ban</button>
+  <div class="user-info">
+    <div>User Name: {{user?.fullName}}</div>
+    <div>Role: {{user?.role}}</div>
+    <div>Status: {{user?.status}}</div>
+  </div>
+  
 
+  <div class="actions" >
+    <button (click)="changeStatus('active')">Activate</button>
+    <button (click)="changeStatus('inactive')">Deactivate</button>
+    <button (click)="changeStatus('banned')">Ban</button>
+  </div>
 
-</div>
 </div>
 
