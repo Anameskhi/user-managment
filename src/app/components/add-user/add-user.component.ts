@@ -4,7 +4,8 @@ import { IUser,UserRole,UserStatus } from 'src/app/interfaces';
 @Component({
   selector: 'app-add-user',
   templateUrl: './add-user.component.html',
-  styleUrls: ['./add-user.component.scss']
+  styleUrls: ['./add-user.component.scss'],
+  
 })
 export class AddUserComponent{
   @Output() addUSer: EventEmitter<IUser>= new EventEmitter()

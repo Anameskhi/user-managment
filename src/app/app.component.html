@@ -4,6 +4,11 @@
 
 <div class="user-items">
   <ng-container *ngFor="let user of users; let i = index">
-    <app-user-item (statusChanged)="changeStatus($event, i)" [user]="user"></app-user-item>
+    <app-user-item 
+    (statusChanged)="changeStatus($event, i)" 
+    (roleChanged)="changeRole($event, i)"
+    [user]="user">
+    
+    </app-user-item>
   </ng-container>
 </div>
