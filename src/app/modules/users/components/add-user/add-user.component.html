@@ -1,0 +1,24 @@
+<form class="container" (ngSubmit)="addUserHandler(f)" #f="ngForm" >
+  <input 
+  [ngClass]="{ 
+    'error': f.controls['fullName']?.invalid && f.controls['fullName']?.touched }"
+    name="fullName" ngModel required>
+  <select name="role"
+  [ngClass]="{
+    'error': f.controls['role']?.invalid && f.controls['role']?.touched }"
+     ngModel required>
+    <option value="admin">Admin</option>
+    <option value="user">User</option>
+    <option value="guest">Guest</option>
+  </select>
+ 
+  
+ 
+
+
+<button type="submit">Add User</button>
+</form>
+<div *ngIf="f.touched && f.value !=='' ">
+  <div *ngIf="f.controls['fullName'].invalid">fullName is required</div>
+  <div *ngIf="f.controls['role'].invalid">Role is required</div>
+</div>

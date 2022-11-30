@@ -8,7 +8,7 @@ import {
   Output,
   SimpleChanges
 } from '@angular/core';
-import {IUser, UserRole, UserStatus} from "../../interfaces";
+import {IUser, UserRole, UserStatus} from "../../../../interfaces";
 
 @Component({
   selector: 'app-user-item',

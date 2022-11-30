@@ -1,4 +1,5 @@
 import { Component, EventEmitter, OnInit, Output } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { IUser,UserRole,UserStatus } from 'src/app/interfaces';
 
 @Component({
@@ -13,13 +14,20 @@ export class AddUserComponent{
 
   ngOnInit(): void {
   }
- addUserHandler(fullName:string, role: string){
-if(!fullName || !role)return;
+ addUserHandler(form: NgForm){
+   if(form.invalid) return;
+   const {fullName,role} = form.value
+
+   form.form.markAllAsTouched()
+
+
    this.addUSer.emit({
      fullName: fullName,
      role: role as UserRole,
      status: 'active'
+     
    })
+   form.reset()
  }
 }
 

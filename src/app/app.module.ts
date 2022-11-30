@@ -8,6 +8,7 @@ import { RolePermissionDirective } from './directives/role-permission.directive'
 import { DropdownDirective } from './directives/dropdown.directive';
 import { DropdownComponent } from './dropdown/dropdown.component';
 import { DropdownItemComponent } from './dropdown/dropdown-item/dropdown-item.component'
+import { FormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -23,7 +24,9 @@ import { DropdownItemComponent } from './dropdown/dropdown-item/dropdown-item.co
   ],
   imports: [
     BrowserModule,
-    AppRoutingModule
+    AppRoutingModule,
+    FormsModule
+ 
   ],
   providers: [],
   bootstrap: [AppComponent]
